@@ -1,0 +1,7 @@
+//Função que soma todos os clientes cadastrados em um dia.
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `func`(thisdate date) RETURNS int(15)
+BEGIN
+ RETURN (SELECT count(*) FROM users where thisdate = data);
+END
+select func('2010-10-05') as Registros;
